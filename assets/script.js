@@ -3,11 +3,37 @@ var startButton = document.getElementById("start-quiz");
 var quoteContainer = document.getElementById("quiz");
 
 //Javascript Variable
+//array of objects for the questions
 var arrayOfQuestions = [
-        "What does HTML provide?",
-        "What is a boolean?",
-        "Which coding language do we not learn at GA TECH Bootcamp?",
-    ];
+    {
+        question: "What does HTML provide?",
+        choice: {
+            A:"Structure and Content", 
+            B: "Style", 
+            C:"Backend Development",
+        },
+        answer: "Structure and Content"
+    },
+    {
+        question: "What is a boolean?",
+        choices: {
+            A: "String", 
+            B: "True/False", 
+            C: "Integers",
+        },
+        answer: "String",
+    },
+    {
+        question:  "Which coding language do we not learn at GA TECH Bootcamp?",
+        choices: {
+            A:"Javascript", 
+            B:"CSS",
+            C:"Python",
+        },
+        answer: "Python",
+    }
+   
+]
 var currentIndex = 0;
 
 
@@ -24,9 +50,10 @@ function displayQuestion(){
 
 //Event Listeners
 startButton.addEventListener("click", function () {
-    arrayOfQuestions++;
+   currentIndex++;
     displayQuestion();
 }); 
+
 
 
 
