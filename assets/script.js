@@ -1,4 +1,3 @@
-// DOM Variable
 var questionsEl = document.getElementById("questions");
 var choicesEl = document.getElementById("choices");
 var startBtn = document.getElementById("start");
@@ -7,23 +6,7 @@ var initialsEl = document.getElementById("initials");
 
 //Javascript Variable
 //array of objects for the questions
-var questions = [
-  {
-    title: "What does HTML provide?",
-    choices: ["Structure and Content", "Style", "Backend Development"],
-    answer: "Structure and Content",
-  },
-  {
-    title: "What is a boolean?",
-    choices: ["String", "True/False", "Integers"],
-    answer: "String",
-  },
-  {
-    title: "Which coding language do we not learn in class?",
-    choices: ["Javascript", "CSS", "Python"],
-    answer: "Python",
-  },
-];
+
 
 
 //Function Variable
@@ -49,7 +32,11 @@ function getQuestion() {
   });
 }
 
+// function questionClick() {
+//   if (this.value !== questions[currentQuestionIndex].answer) {
 
+//   }
+// }
  
 
 //Event Listeners
