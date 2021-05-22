@@ -108,14 +108,16 @@ function saveHighscore() {
   }
 }
 
+function checkForEnter(event) {
+  if (event.key === "Enter") {
+    saveHighscore();
+  }
+}
 
+// on clicks 
+submitBtn.onclick = saveHighscore;
+startBtn.onclick = startQuiz;
+initialsEl.onkeyup = checkForEnter; 
  
 
-//Event Listeners
-startButton.addEventListener("click", function () {
-  displayQuestions();
-});
 
-//Function Calls
-
-displayQuestion();
