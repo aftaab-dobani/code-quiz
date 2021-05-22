@@ -1,8 +1,15 @@
+//Quiz State Variables 
+var currentQuestionIndex = 0;
+var time = questions.length * 15; 
+var timerId;
+
+//Dom Elements 
 var questionsEl = document.getElementById("questions");
 var choicesEl = document.getElementById("choices");
 var startBtn = document.getElementById("start");
 var submitBtn = document.getElementById("submit");
 var initialsEl = document.getElementById("initials");
+var timerEl = document.getElementById("initials");
 
 //Javascript Variable
 //array of objects for the questions
@@ -14,6 +21,8 @@ function startQuiz() {
   var startScreenEl = document.getElementById("start-screen");
   startScreenEl.setAttribute("class", "hide");
   questionsEl.removeAttribute("class");
+  timerId = setInterval(clockTick, 1000);
+  timerEl.textContent = time;
   getQuestion();
 }
 
