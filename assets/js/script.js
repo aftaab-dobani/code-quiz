@@ -10,6 +10,7 @@ var startBtn = document.getElementById("start");
 var submitBtn = document.getElementById("submit");
 var initialsEl = document.getElementById("initials");
 var timerEl = document.getElementById("initials");
+var feedbackEl = document.getElementById("feedback");
 
 //Javascript Variable
 //array of objects for the questions
@@ -46,6 +47,22 @@ function getQuestion() {
 
 //   }
 // }
+
+function questionClick() {
+  if (this.value !== questions[currentQuestionIndex].answer) {
+    time -= 15;
+    if (time < 0) {
+      time = 0;
+    }
+
+    timerEl.textContent = time;
+    feedbackEl.textContent = "Wrong!";
+  } else {
+      
+      feedbackEl.textContent = "Correct!";
+    }
+  
+}
  
 
 //Event Listeners
