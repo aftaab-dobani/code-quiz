@@ -100,6 +100,11 @@ function saveHighscore() {
       score:time, 
       initials: initials
     };
+
+    highscores.push(newScore);
+    window.localStorage.setItem("highscores", JSON.stringify(highscores));
+
+    window.location.href = "highscores.html";
   }
 }
 
