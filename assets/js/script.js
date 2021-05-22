@@ -61,8 +61,49 @@ function questionClick() {
       
       feedbackEl.textContent = "Correct!";
     }
+
+    //share wrong or correct
+    feedbackEl.setAttribute("class", "feedback");
+    setTimeout(function() {
+      feedbackEl.setAttribute("class", "feedback hide");
+    }, 1000); 
+
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex === questions.length) {
+      quizEnd();
+
+    } else {
+      getQuestion();
+    }
   
 }
+
+// end the quiz 
+function quizEnd() {
+  time--;
+  timerEl.textContent = time;
+
+  if (time <= 0) {
+    quizEnd();
+  }
+}
+
+// save the highscore
+function saveHighscore() {
+  var initials = initialsEl.value.trim();
+  if (initials !== "") {
+    var highscores = 
+    JSON.parse(window.localStorage.getItem("highscores")) || []; 
+
+    var newScore = {
+      score:time, 
+      initials: initials
+    };
+  }
+}
+
+
  
 
 //Event Listeners
