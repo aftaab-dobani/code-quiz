@@ -80,7 +80,7 @@ function questionClick() {
 }
 
 // end the quiz 
-function quizEnd() {
+function clockTick() {
   time--;
   timerEl.textContent = time;
 
